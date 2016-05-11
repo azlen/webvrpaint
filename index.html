@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>$^%#*</title>
+
+    <script src="https://js.leapmotion.com/leap-0.6.4.js"></script>
+    <script src="https://aframe.io/releases/0.2.0/aframe.js"></script>
+    <script src="line.js"></script>
+
+    <!--<style>
+      html, body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      #blob {
+        display: inline-block;
+        margin: auto;
+        width: 100px;
+        height: 100px;
+        background-color: #222;
+      }
+    </style>-->
+  </head>
+  <body>
+    <a-scene>
+      <a-entity mixin="red" line="path: -1 1 0, -1 0.5 0, -1 0 0"></a-entity>
+
+      <a-entity id="hand">
+        <a-box class="palm" color="tomato" depth="0.5" height="0.5" width="0.5"></a-box>
+        <a-entity class="fingers">
+          <a-box color="blue" depth="0.1" height="0.1" width="0.1"></a-box>
+          <a-box color="blue" depth="0.1" height="0.1" width="0.1"></a-box>
+          <a-box color="blue" depth="0.1" height="0.1" width="0.1"></a-box>
+          <a-box color="blue" depth="0.1" height="0.1" width="0.1"></a-box>
+          <a-box color="blue" depth="0.1" height="0.1" width="0.1"></a-box>
+        </a-entity>
+      </a-entity>
+      <a-entity id="hand2">
+        <a-box class="palm" color="tomato" depth="0.5" height="0.5" width="0.5"></a-box>
+        <a-entity class="fingers">
+          <a-box color="blue" depth="0.1" height="0.1" width="0.1"></a-box>
+          <a-box color="blue" depth="0.1" height="0.1" width="0.1"></a-box>
+          <a-box color="blue" depth="0.1" height="0.1" width="0.1"></a-box>
+          <a-box color="blue" depth="0.1" height="0.1" width="0.1"></a-box>
+          <a-box color="blue" depth="0.1" height="0.1" width="0.1"></a-box>
+        </a-entity>
+      </a-entity>
+    </a-scene>
+    <!--<span id="blob"></span>-->
+    <script src="index.js"></script>
+  </body>
+</html>
