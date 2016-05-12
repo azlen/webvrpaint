@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LEAP SERVER</title>
+    <script src="leap.js"></script>
+  </head>
+  <body>
+    server.html
+    <script>
+      var cache = [];
+      var first = true;
+      var keycache = [];
+      function stringify(o) {
+        var out = JSON.stringify(o, function(key, value) {
+          if(first){
+            if (typeof value === 'object' && value !== null) {
+                if (cache.indexOf(value) !== -1) {
+                    // Circular reference found, discard key
+                    if(keycache.indexOf(key) === -1) {
+                      keycache.push(key)
+                    }
+                    return;
+                }
+                // Store value in our collection
+                cache.push(value);
+            }
+          }else{
+            if (keycache.indexOf(key) !== -1) {
+              return;
+            }
+          }
+          return value;
+        });
+        first = false;
+        cache = [];
+        return out;
+      }
+
+      var ws = new WebSocket('ws://localhost:8079');
+      var controller = Leap.loop({
+        enableGestures: true,
+        background: true,
+      }, function(frame) {
+        console.log('running');
+        ws.send(stringify(frame));
+      })
+    </script>
+  </body>
+</html>
