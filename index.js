@@ -1,7 +1,7 @@
 var hands = [document.querySelector('#hand'), document.querySelector('#hand2')]
 
 var controller = Leap.loop({
-  host: '70.79.64.233',
+  host: '10.32.111.76',
   enableGestures: true,
   //optimizeHMD: true
 }, function(frame) {
