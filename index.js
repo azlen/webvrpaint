@@ -8,7 +8,7 @@ var path = '';
 
 var controller = Leap.loop({
   host: '70.79.64.233',
-  port: 6436,
+  port: 3000,
   //enableGestures: true,
   //optimizeHMD: true
 }, function(frame) {
