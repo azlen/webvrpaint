@@ -7,7 +7,8 @@ function mapPosition(position) {
 var path = '';
 
 var controller = Leap.loop({
-  host: '192.168.1.26',
+  host: '70.79.64.233',
+  port: 6436,
   //enableGestures: true,
   //optimizeHMD: true
 }, function(frame) {
